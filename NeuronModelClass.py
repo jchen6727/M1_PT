@@ -11,7 +11,7 @@ from neuron import h
 import os
 
 class NeuronModel:
-    def __init__(self, mod_dir = '../Neuron_Model_HMM/', nav12=1,
+    def __init__(self, mod_dir = './Neuron_Model_HMM/', nav12=1,
                       nav16=1,
                       dend_nav12=1,
                       soma_nav12=1,
