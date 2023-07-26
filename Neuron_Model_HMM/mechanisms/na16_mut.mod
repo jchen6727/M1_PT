@@ -46,8 +46,8 @@ PARAMETER {
     ah_0 = 1.449473463 (/ms)
     ah_1 = 5472.451652
     ah_2 = 0.06853252696 (/mV)
-    ahfactor=2.009374801
-    bhfactor=1.309039173
+    ahfactor=1
+    bhfactor=1
     vShift = 21.16347821           (mV)  : shift to the right to account for Donnan potentials
                                  : 12 mV for cclamp, 0 for oo-patch vclamp simulations
     vShift_inact = -15.5224286     (mV)  : global additional shift to the right for inactivation

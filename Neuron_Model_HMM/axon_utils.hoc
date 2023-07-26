@@ -2,11 +2,14 @@ proc initial_values(){
 	dend_na12 =0.0001/2
 	dend_k = 0.004226
 	soma_na12 = 0.983955/2	
-	soma_K = 0.303472
+	soma_K = 8.396194779331378477e-02
 	node_na = 2
 	axon_KP =0.973538
-	axon_KT = 0.089259
+	axon_KT = 1.7
 	axon_K = 1.021945
+	axon_LVA = 0.0014
+	axon_HVA = 0.00012
+	axon_KCA = 1.8
 	ais_na16		=	7 //3.137968
 	ais_na12		=	5 //3.137968
 	ais_ca = 0.000990
@@ -30,8 +33,9 @@ proc populate_axon(){
 	forsec cell.axonal{
 			
 			
-			gCa_HVAbar_Ca_HVA = 0 
-			gSK_E2bar_SK_E2 = 0
+			gCa_HVAbar_Ca_HVA = axon_HVA
+			gCa_LVAstbar_Ca_LVAst = axon_LVA
+			gSK_E2bar_SK_E2 = axon_KCA
 			nseg=11
 			g_pas(0:0.1) = (gpas_all/myelin_scale):(gpas_all/myelin_scale)
 			g_pas(0.1:1) = gpas_all:gpas_all
@@ -87,7 +91,7 @@ access cell.axon[0]
 	
 access cell.soma
 }
-proc update_soma_na(){
+proc update_soma(){
 access cell.soma
 
 	vShift_na = navshift
@@ -95,16 +99,18 @@ access cell.soma
 	gbar_na12mut = soma_na12/2
 	gbar_na16 = soma_na16/2
 	gbar_na16mut = soma_na16/2
+	gSKv3_1bar_SKv3_1 = soma_K
+
 
 }
-proc update_dend_na(){
+proc update_dend(){
 forsec cell.apical{
 	
 	gbar_na12 = dend_na12/2
 	gbar_na12mut = dend_na12/2
 	gbar_na16 = dend_na16/2
 	gbar_na16mut = dend_na16/2
-	
+	gSKv3_1bar_SKv3_1 = dend_k
 	
 	}
 
@@ -115,8 +121,8 @@ forsec cell.apical{
 proc working(){
 populate_axon()
 create_ais()
-update_soma_na()
-update_dend_na()
+update_soma()
+update_dend()
 
 print "ran working"
 }
