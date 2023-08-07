@@ -5,7 +5,6 @@ import sys
 from pathlib import Path
 import csv
 import numpy as np
-from currentscape.currentscape import plot_currentscape
 
 class Na1612Model:
     #def __init__(self,na12name = 'na12_orig1', na12mechs = ['na12','na12mut'],na16name = 'na16_orig2', na16mechs = ['na16','na16mut'], params_folder = './params/',nav12=1,nav16=1,K=1,KT=1,KP=1,somaK=1,ais_ca = 1,ais_Kca = 1,soma_na16=1,soma_na12 = 1,node_na = 1,plots_folder = f'./Plots/'):
@@ -215,40 +214,6 @@ def default_model():
     plot_dvdt_from_volts(sim.volt_soma,sim.dt,axs[1])
     fn = f'{sim.plot_folder}/default_na12HMM.pdf'
     fig_volts.savefig(fn)      
-
-def make_currentscape_plot(sim_config = {
-                'section' : 'soma',
-                'segment' : 0.5,
-                'section_num': 0,
-                'currents'  : ['na12.ina_ina','na12mut.ina_ina','na16.ina_ina','na16mut.ina_ina','ica_Ca_HVA','ica_Ca_LVAst','ihcn_Ih','ik_SK_E2','ik_SKv3_1'],
-                'ionic_concentrations' :["cai", "ki", "nai"]
-                
-            }):
-    sim_obj = NeuronModel()   #TO DO : send in different parameters???
-    sim_obj.init_stim(amp=0.5,sweep_len = 200)
-    Vm, I, t, stim,ionic = sim_obj.run_sim_model(dt=0.01,sim_config=sim_config)
-    current_names = sim_config['currents']
-    plot_config = {
-        "output": {
-            "savefig": True,
-            "dir": "./Plots/Currentscape/",
-            "fname": "test_plot2",
-            "extension": "pdf",
-            "dpi": 600,
-            "transparent": False
-        },
-        "current": {"names": current_names},
-        "ions":{"names": ["ca", "k", "na"]},
-        "voltage": {"ylim": [-90, 50]},
-        "legendtextsize": 5,
-        "adjust": {
-            "left": 0.15,
-            "right": 0.8,
-            "top": 1.0,
-            "bottom": 0.0
-            }
-        }
-    fig = plot_currentscape(Vm, [I[x] for x in I.keys()], plot_config,[ionic[x] for x in ionic.keys()])
 def scanK():
     for i in np.arange(0.7,2,0.2):
 
