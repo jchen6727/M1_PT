@@ -98,9 +98,7 @@ def read_pkl(read_path: str):
 
 def get_freq(spike_data: str):
     freq_data = {}
-    data = spike_data
-    {}
-    for datm in data:
+    for datm in spike_data:
         pop = datm.split('\n')[0]
         freq = datm.split(' ')[-2]
         freq_data[pop] = freq

@@ -144,3 +144,7 @@ Plots/Na16G1625R/Na16_G1625Rv3/Task_3/
 Plots/Na16G1625R/Na16_G1625Rv3/Task_4/
 
 Plots/Na16G1625R/Na16_G1625Rv3/Task_5/
+
+*.c
+
+*.o

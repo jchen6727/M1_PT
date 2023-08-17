@@ -1,0 +1,4 @@
+freq,data,time_this_iter_s,done,training_iteration,trial_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,iterations_since_restore
+1.0,"amp    0.3
+hh     1.0
+dtype: float64",36.51625061035156,False,1,ed765_00000,2023-08-17_07-48-50,1692272930,36.51625061035156,2028042,grid,10.0.0.101,36.51625061035156,1

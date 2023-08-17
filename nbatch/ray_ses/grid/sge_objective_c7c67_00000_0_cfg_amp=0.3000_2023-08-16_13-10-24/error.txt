@@ -1,0 +1,17 @@
+Failure # 1 (occurred at 2023-08-16_13-10-28)
+[36mray::ImplicitFunc.train()[39m (pid=2013491, ip=10.0.0.101, repr=sge_objective)
+  File "/ddn/jchen/miniconda3/envs/dev/lib/python3.10/site-packages/ray/tune/trainable/trainable.py", line 384, in train
+    raise skipped from exception_cause(skipped)
+  File "/ddn/jchen/miniconda3/envs/dev/lib/python3.10/site-packages/ray/tune/trainable/function_trainable.py", line 336, in entrypoint
+    return self._trainable_func(
+  File "/ddn/jchen/miniconda3/envs/dev/lib/python3.10/site-packages/ray/tune/trainable/function_trainable.py", line 653, in _trainable_func
+    output = fn()
+  File "/ddn/jchen/dev/M1_PT/nbatch/grid.py", line 44, in sge_objective
+    data = utils.sge_run(config=config, cwd=cwd, cmdstr=SH_CMDSTR, cores=2)
+  File "/ddn/jchen/dev/M1_PT/nbatch/utils.py", line 50, in sge_run
+    stdouts, stderr = dispatcher.shrun(sh="qsub",
+  File "/ddn/jchen/dev/pubtk/pubtk/runtk/dispatchers.py", line 78, in shrun
+    create_script(env=self.env, command=self.cmdstr, filename=self.shellfile, template=template, **kwargs)
+  File "/ddn/jchen/dev/pubtk/pubtk/runtk/utils.py", line 34, in create_script
+    fptr.close()
+OSError: [Errno 122] Disk quota exceeded

@@ -1,0 +1,4 @@
+loss,data,time_this_iter_s,done,training_iteration,trial_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,iterations_since_restore
+0,"amp    0.3
+hh     1.0
+dtype: float64",41.4242627620697,False,1,23d86_00000,2023-08-16_13-06-35,1692205595,41.4242627620697,2009850,grid,10.0.0.101,41.4242627620697,1

@@ -21,6 +21,7 @@ batch
 """
 cfg.amp = 0.2
 
+hh.set_mappings('cfg')
 """
 netParams
 """
@@ -38,25 +39,3 @@ netParams.stimSourceParams['ic'] = {'type': 'IClamp', 'delay': 300, 'dur': 1000,
 netParams.stimTargetParams['ic->hh'] = {'source': 'ic', 'conds': {'pop': 'hh'}, 'sec': 'soma_0', 'loc': 0.5}
 netParams.popParams['hh'] = {'cellType': 'hh', 'numCells': 1}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-hhcell = netParams.importCellParams('PT', 'TTPC_M1_Na_HH.py', 'Na1612Model')
-fptr = open("na1612.json", "w")
-json.dump(hhcell, fptr)
-fptr.close()
-"""

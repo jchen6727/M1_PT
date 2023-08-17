@@ -1,0 +1,13 @@
+,freq,data,time_this_iter_s,done,training_iteration,trial_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,iterations_since_restore,config/cfg.amp,logdir
+0,1.0,"amp    0.3
+hh     1.0
+dtype: float64",36.51625061035156,False,1,ed765_00000,2023-08-17_07-48-50,1692272930,36.51625061035156,2028042,grid,10.0.0.101,36.51625061035156,1,0.3,/ddn/jchen/dev/M1_PT/nbatch/ray_ses/grid/sge_objective_ed765_00000_0_cfg_amp=0.3000_2023-08-17_07-48-09
+1,4.5,"amp    0.4
+hh     4.5
+dtype: float64",31.45480298995972,False,1,ed765_00001,2023-08-17_07-48-51,1692272931,31.45480298995972,2028140,grid,10.0.0.101,31.45480298995972,1,0.4,/ddn/jchen/dev/M1_PT/nbatch/ray_ses/grid/sge_objective_ed765_00001_1_cfg_amp=0.4000_2023-08-17_07-48-14
+2,7.0,"amp    0.5
+hh     7.0
+dtype: float64",26.429738759994507,False,1,ed765_00002,2023-08-17_07-48-51,1692272931,26.429738759994507,2028758,grid,10.0.0.101,26.429738759994507,1,0.5,/ddn/jchen/dev/M1_PT/nbatch/ray_ses/grid/sge_objective_ed765_00002_2_cfg_amp=0.5000_2023-08-17_07-48-19
+3,12.5,"amp     0.6
+hh     12.5
+dtype: float64",21.4306697845459,False,1,ed765_00003,2023-08-17_07-48-51,1692272931,21.4306697845459,2029376,grid,10.0.0.101,21.4306697845459,1,0.6,/ddn/jchen/dev/M1_PT/nbatch/ray_ses/grid/sge_objective_ed765_00003_3_cfg_amp=0.6000_2023-08-17_07-48-25
